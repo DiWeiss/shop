@@ -1,0 +1,83 @@
+{
+  "food": [
+  	{
+      "id": 0,
+      "imageUrl": "",
+      "name": "Цезарь",
+      "size": 300,
+      "price": 350,
+      "category": 0
+    },
+		{
+      "id": 1,
+      "imageUrl": "",
+      "name": "Греческий",
+      "size": 340,
+      "price": 360,
+      "category": 0
+    },
+    {
+      "id": 2,
+      "imageUrl": "",
+      "name": "Пеперони",
+      "size": 400,
+      "price": 450,
+      "category": 1
+    },
+	{
+      "id": 3,
+      "imageUrl": "",
+      "name": "Сырная",
+      "size": 400,
+      "price": 650,
+      "category": 1
+    },
+	    {
+      "id": 4,
+      "imageUrl": "",
+      "name": "Карбонара",
+      "size": 500,
+      "price": 750,
+      "category": 2
+    },
+	    {
+      "id": 5,
+      "imageUrl": "",
+      "name": "Болоньезе",
+      "size": 440,
+      "price": 700,
+      "category": 2
+    },
+		    {
+      "id": 6,
+      "imageUrl": "",
+      "name": "Чизкейк",
+      "size": 500,
+      "price": 750,
+      "category": 3
+    },
+	    {
+      "id": 7,
+      "imageUrl": "",
+      "name": "Кекс",
+      "size": 440,
+      "price": 700,
+      "category": 3
+    },
+	    { "id": 8,
+      "imageUrl": "",
+      "name": "Сок",
+      "size": 500,
+      "price": 750,
+      "category": 4
+    },
+	    {
+      "id": 9,
+      "imageUrl": "",
+      "name": "Вода",
+      "size": 440,
+      "price": 700,
+      "category": 4
+    } 
+  ]
+}

@@ -1,0 +1,58 @@
+.header{
+    width: auto;
+    height: 110px;
+    border-bottom: 4px double black;
+    margin-bottom: 30px;
+
+    &__container{
+        width: auto;
+        height:100px;
+        background-color: black;
+        margin: auto;
+        margin-top: 15px;
+        position: relative;
+    }
+    &__cart{
+        width: 40px;
+        height: auto;
+        position: absolute;
+        right: 30px;
+        bottom: 30px;
+
+       
+    }
+    .--count{
+        width: 20px;
+        height: 15px;
+        background-color: white;
+        border-radius: 10px;
+        font-size: 12px;
+        font-weight: 400;
+        text-align: center;
+        color: black;
+        bottom: 70px;
+        right: 20px;
+        font-family: fantasy;
+    }
+    .logo{
+        display: inline-flex;
+        align-items: center;
+        margin-left: 30px;
+
+            &__img{
+                width: 100px;
+                height: auto; 
+            }
+            &__name{
+                color: white;
+                font-size: 28px;
+                font-weight: 500;
+                font-family: monospace;
+            }
+            @media only screen and (max-width: 320px) {
+                margin-left: 10px;
+              }
+    }
+
+
+}
