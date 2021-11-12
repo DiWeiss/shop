@@ -1,0 +1,70 @@
+.block{
+    margin-top: 50px;
+    padding: 0 50px 0 50px;
+
+    @media only screen and (max-width: 320px) {
+        padding: 0;
+      }
+    a{
+        padding: 8px;
+        color: white;
+        background-color: black;
+        border-radius: 20px;
+        width: 100px;
+        font-family: system-ui;
+        text-align: center;
+        border: 4px double white;
+        margin: auto;
+       
+    }
+
+    a:hover{
+        background-color: white;
+        color: black;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    .choice{
+        display: inline-flex;
+        padding-bottom: 10px;
+        justify-content: space-between;
+        width: inherit;
+    }
+
+    &__conteiner{
+        width: 250px;
+        height: 260px;
+        background-color: #f0e7e7;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    
+    &__title{
+        font-family: system-ui;
+        font-size: 20px;
+        font-weight: 600;
+        padding: 2px 20px 5px 20px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        color: white;
+        width: fit-content;
+        margin: auto;
+        margin-top: 5px;
+        background-color: black;
+        border-radius: 25px;
+        opacity: 0.8;
+        
+    }
+    &__img{
+        width: 100%;
+        height: auto;
+    }
+    &__price{
+        color: black;
+        width: fit-content;
+        margin: auto;
+        opacity: 0.5;
+        margin-top: 5px;
+        margin-bottom: 5px;
+}
+}

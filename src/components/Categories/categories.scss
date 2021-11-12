@@ -1,0 +1,28 @@
+.categories{
+    width: auto;
+    margin-left: 50px;
+    margin-right: 50px;
+    
+    &__conteiner{
+        font-size: 18px;
+        font-family: monospace;
+        display: flex;
+        justify-content: space-around;
+        font-weight: 600;
+
+        @media only screen and (max-width: 425px) {
+            flex-wrap: wrap;
+            gap: 20px;
+        
+          }
+    }
+    &--active{
+        font-size: 26px;
+    }
+    div:hover{
+        border-bottom: 1px black solid;
+        cursor: pointer;
+    }
+}
+
+  
