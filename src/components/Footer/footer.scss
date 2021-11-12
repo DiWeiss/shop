@@ -1,0 +1,25 @@
+.footer{
+    margin: auto;
+    font-family: Helvetica;
+    background-color: #181818;
+    font-size: 19px;
+    line-height: 16px;
+    height: 80px;
+    margin-top: 50px;
+    margin-bottom: 15px;
+    text-align: end;
+    &__position{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        gap: 0px 0px;
+        grid-template-areas: "clause";
+    }
+    }
+    .text{
+        color: white;
+        margin-right: 20px;
+        padding-top: 10px;
+        letter-spacing: 2px;
+        grid-area: clause;
+    }

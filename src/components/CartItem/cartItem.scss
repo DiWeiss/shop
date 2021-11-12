@@ -1,0 +1,50 @@
+.list-wrapper{
+    padding-left: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    align-items: center;
+}
+.list-item{
+    font-family: cursive;
+    padding-left: 10px;
+    font-size: 18px;
+    width: 150px;
+    &__main{
+        width: 50px;
+        font-weight: bold;
+    }
+    &--count{
+        width: 20px;
+    }
+    @media only screen and (max-width: 320px) {
+        width: 100px;
+      }
+}
+.button{
+    background-color: black;
+    color: white;
+    font-weight: bolder;
+    
+    &--round{
+        width: 20px;
+        height: 20px;
+        border-radius: 20px;
+    }
+    &--square{
+        width: 35px;
+        border-radius: 5px;
+    }
+
+    &:hover{
+        background-color: white;
+        color: black;
+        font-weight: bold;
+        cursor: pointer;
+        border: 4px double black;
+        
+    }
+}

@@ -18,13 +18,12 @@
     "sass": "^1.39.2",
     "web-vitals": "^1.1.2"
   },
-  
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "json-server": "npx json-server --watch public/db.json --port=3001" 
+    "json-server": "npx json-server --watch public/db.json --port=3001"
   },
   "eslintConfig": {
     "extends": [

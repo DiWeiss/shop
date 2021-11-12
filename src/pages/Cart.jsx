@@ -1,72 +1,78 @@
-import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import CartItem from '../CartItem/CartItem'
-import {claerCart, removeItem, plusItem, minusItem} from '../redux/actions/cart'
+import React, {useEffect, useState}from "react";
+import { useSelector, useDispatch } from "react-redux";
+import CartItem from "../components/CartItem";
+import {
+  claerCart,
+  removeItem,
+  incrementItem,
+  decrementItem,
+} from "../store/actions/cart";
 
+function Cart({count}) {
+  const dispatch = useDispatch();
+  const group = useSelector(({ cartReduser }) => cartReduser);
 
-function Cart() {
+const [price, setPrice]=useState(0);
 
-
-    const dispatch = useDispatch();
-    const {items, totalPrice, totalCount}=useSelector(({cartReduser})=>cartReduser);
-    
-    const group=Object.keys(items).map(key=>{
-        const obj={
-            item: items[key][0],
-            count: items[key].length
-        } 
-        return  obj;
-    });
- const onClearCart=()=>{
-     dispatch(claerCart());
+useEffect(()=>{
+  let temp=0
+   if (group.length>0){temp=group.reduce((acc, curr)=>{
+return acc+curr.price*curr.count;
+   },0)
  }
- const onRemoveItem=(id)=>{
+setPrice(temp);})
+  
+  
+  const onClearCart = () => {
+    dispatch(claerCart());
+  };
+  const onHendlerRemoveItem = (id) => {
     dispatch(removeItem(id));
- };
+  };
 
- const onPlusItem=(id)=>{
-    dispatch(plusItem(id));
- };
+  const onHendlerIncrementItem = (id) => {
+    dispatch(incrementItem(id));
+  };
 
- const onMinusItem=(id)=>{
-    dispatch(minusItem(id));
- };
-    return (
-        <div>
+  const onHendlerDecrementItem = (id) => {
+    dispatch(decrementItem(id));
+  };
+ 
+  return (
+    
+    <div>
+      <div>
+        {group.map((obj) => {
+          const i = obj.price*obj.count;
+          return (
             <div>
-            {
-                group.map((obj)=>{
-                    const i=obj.item.price*obj.count;
-                    return (
-                        <div>  
-                           
-                            <CartItem
-                                id={obj.item.id} 
-                                name={obj.item.name} 
-                                price={obj.item.price} 
-                                count={obj.count} 
-                                sum={i}
-                                onRemove={onRemoveItem}
-                                onMinus={onMinusItem}
-                                onPlus={onPlusItem}
-                            />
-                        </div>
-                      )
-                }
-        
-                
-                )
-            }
+              <CartItem
+                id={obj.id}
+                name={obj.name}
+                price={obj.price}
+                count={obj.count}
+                sum={i}
+                onRemove={onHendlerRemoveItem}
+                onDecrement={onHendlerDecrementItem}
+                onIncrement={onHendlerIncrementItem}
+              />
             </div>
-            <div className="total__wrapper">
-                <div className=' total total--bold'>Всего в заказе: </div><div className="total">{totalCount}</div>
-                <br/>
-                <div className=' total total--bold'>Итого: </div><div className="total">{totalPrice} ₽</div>
-            </div>
-           
-            <div className='button--clean' onClick={onClearCart}>Очистить</div>
-        </div>
-    )
+          );
+        })}
+      </div>
+      <div className="total__wrapper">
+        <div className=" total total--bold">Всего в заказе: </div>
+        <div className="total">{count}</div>
+        <br />
+        <div className=" total total--bold">Итого: </div>
+        <div className="total">{price} ₽</div>
+      </div>
+
+      <div className="button--clean" onClick={onClearCart}>
+        Очистить
+      </div>
+    </div>
+  );
 }
 
-export default Cart
+export default Cart;

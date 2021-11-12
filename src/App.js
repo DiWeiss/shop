@@ -1,27 +1,33 @@
 import { Route } from 'react-router';
-import React from 'react';
-import {useDispatch} from 'react-redux'
+import React, {useEffect, useState} from 'react';
 
 import Home from './pages/Home';
 import Cart from './pages/Cart';
-import Header from './Header/Header';
-import Footer from './Footer/Footer';
+import Header from './components/Header';
+import Footer from './components/Footer';
+ 
+import { useSelector } from 'react-redux';
 
-
-
-
+import './app.scss'
 function App() {
   
-  const dispatch = useDispatch();
-  
-  
+
+  const group = useSelector(({ cartReduser }) => cartReduser);
+  const [count, setCount] = useState(0);
+  useEffect(()=>{
+    let temp=0
+     if (group.length>0){temp=group.reduce((acc, curr)=>{
+ return acc+curr.count;
+     },0)
+   }
+ setCount(temp);})
   
   return (
     <div>
       <div className="wrapper">
-        <Header/> 
+        <Header totalCount={count}/> 
           <Route path="/" component={Home} exact></Route>
-          <Route path="/cart" component={Cart} exact></Route>
+          <Route path="/cart" component={()=><Cart count={count}/>} exact></Route>
       </div>
       <Footer/>
     </div>
